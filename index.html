@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+  <header class="header">
+    <div class="logo">
+        <img src="images/agency log.png" alt="ExploreMore Travels">
+    </div>
+    <nav class="navigation-menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li class="dropdown">
+                <a href="#destinations">Destinations</a>
+            </li>
+            <li><a href="#tours">Tours & Packages</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <button class="book-button">Book Now</button>
+</header>
+<section class="full-screen-slider">
+  <div class="slide active" style="background-image: url('images/ooty.webp');">
+      <div class="overlay">
+          <h1>Experience ooty</h1>
+          <button class="book-button">Book Now</button>
+      </div>
+  </div>
+  <div class="slide" style="background-image: url('images/chikmagalur.jpg');">
+      <div class="overlay">
+          <h1>Experience chikmagalur</h1>
+          <button class="book-button">Book Now</button>
+      </div>
+  </div>
+  <div class="slide" style="background-image: url('images/shimla.webp');">
+      <div class="overlay">
+          <h1>Experience shimla</h1>
+          <button class="book-button">Book Now</button>
+      </div>
+  </div>
+  <div class="slide" style="background-image: url('images/jaipur.jpg');">
+    <div class="overlay">
+        <h1>Experience jaipur</h1>
+        <button class="book-button">Book Now</button>
+    </div>
+</div>
+<div class="slide" style="background-image: url('images/ladakh.jpg');">
+    <div class="overlay">
+        <h1>Experience ladakh</h1>
+        <button class="book-button">Book Now</button>
+    </div>
+</div>
+  <div class="slider-controls">
+      <button id="prev">&larr;</button>
+      <button id="next">&rarr;</button>
+  </div>
+  <div class="pagination-dots"></div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>

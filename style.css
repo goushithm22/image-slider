@@ -1,0 +1,147 @@
+.body {
+  margin: 0;
+}
+
+
+.header {
+  position: sticky;
+  top: 0;
+  background: white; /* Ensure it's visible above the images */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1000; /* Ensure the header stays above the slider */
+}
+
+.logo img {
+  max-height: 50px;
+}
+
+.navigation-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-menu a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.navigation-menu .dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px 0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.book-button {
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: transform 0.3s;
+  margin-bottom: 5px;
+}
+
+.book-button:hover {
+  background: #e55a00;
+  transform: scale(1.05);
+}
+
+.full-screen-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+  
+
+
+.slide.active {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.slider-controls button {
+  position: absolute;
+  top: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+  z-index: 100;
+  transform: translateY(-50%);
+  border-radius: 50px;
+}
+
+#prev {
+  left: 5px;
+}
+
+#next {
+  right: 5px;
+}
+
+.pagination-dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.pagination-dots div {
+  display: inline-block;
+  width: 10px;  
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.pagination-dots .active {
+  opacity: 1;
+}
