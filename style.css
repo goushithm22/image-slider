@@ -20,16 +20,17 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 15px 30px;
+  justify-content: space-between; /* Keep menu and button in place */
+  padding: 10px 20px;
   z-index: 1000;
   height: 70px;
 }
 
 /* LOGO */
 .logo {
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
-  margin-right: 20px;
 }
 
 .logo img {
@@ -46,7 +47,8 @@ body {
 .navigation-menu ul {
   list-style: none;
   display: flex;
-  gap: 15px;
+  align-items: center;
+  gap: 20px;
 }
 
 .navigation-menu a {
@@ -57,28 +59,20 @@ body {
   display: inline-block;
 }
 
-/* HAMBURGER MENU (HIDDEN ON DESKTOP) */
-.menu-toggle {
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: none; /* Hidden on desktop */
-}
-
-/* BOOK BUTTON */
-button {
+/* BOOK NOW BUTTON */
+.book-button {
   background: #ff6600;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 15px;
   cursor: pointer;
   font-size: 16px;
   border-radius: 4px;
   transition: transform 0.3s;
+  margin-left: auto; /* Push to right */
 }
 
-button:hover {
+.book-button:hover {
   background: #e55a00;
   transform: scale(1.05);
 }
@@ -137,7 +131,7 @@ button:hover {
   padding: 0 20px;
 }
 
-/* STYLE FOR BOTH ARROW BUTTONS */
+/* ARROW BUTTONS */
 .slider-controls button {
   background: rgba(0, 0, 0, 0.5);
   color: white;
@@ -158,11 +152,6 @@ button:hover {
 /* RIGHT ARROW */
 #next {
   right: 20px;
-}
-
-/* HOVER EFFECT */
-.slider-controls button:hover {
-  background: rgba(0, 0, 0, 0.8);
 }
 
 /* PAGINATION DOTS */
@@ -193,7 +182,7 @@ button:hover {
   height: 14px;
 }
 
-/* RESPONSIVE FIXES FOR MOBILE */
+/* RESPONSIVE FIXES FOR TABLET */
 @media (max-width: 1024px) {
   .full-screen-slider {
     height: 75vh;
@@ -211,21 +200,9 @@ button:hover {
 
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-  /* SLIDER ADJUSTMENTS */
-  .full-screen-slider {
-    height: 60vh;
-  }
-
-  .overlay {
-    max-width: 80%;
-  }
-
-  .overlay h1 {
-    font-size: 1.5rem;
-  }
-
-  .book-button {
-    font-size: 0.8rem;
+  /* Ensure header is visible */
+  .header {
+    display: flex !important;
   }
 
   /* HIDE NORMAL NAVIGATION MENU */
@@ -250,11 +227,32 @@ button:hover {
   /* SHOW HAMBURGER MENU */
   .menu-toggle {
     display: block;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
-  /* ACTIVE MENU */
+  /* Show menu when toggled */
   .navigation-menu.active {
     display: flex;
+  }
+
+  /* SLIDER FULL SCREEN FIX */
+  .full-screen-slider {
+    height: 100vh; /* Ensure full screen */
+  }
+
+  .overlay {
+    max-width: 80%;
+  }
+
+  .overlay h1 {
+    font-size: 1.5rem;
+  }
+
+  .book-button {
+    font-size: 0.8rem;
   }
 
   /* MAKE ARROWS SMALLER */
