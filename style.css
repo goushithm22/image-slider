@@ -1,173 +1,183 @@
-/* GENERAL RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  overflow-x: hidden;
+  margin: 0;
 }
 
-/* HEADER FIX */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Ensures everything is evenly spaced */
-  padding: 10px 20px;
-  z-index: 1000;
-  height: 70px;
+/*  HEADER STYLING */
+.header { /* Fixed header at the top */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    z-index: 1000;
+    height: 55px;
 }
 
-/* LOGO */
-.logo {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
+/*  LOGO & MENU CONTAINER */
+.logo-menu-container { /* Groups logo and menu toggle button */
+    display: flex;
+    align-items: center;
 }
 
-.logo img {
-  max-height: 50px;
+/*  MENU TOGGLE BUTTON */
+.menu-toggle { /* Hidden by default, shown in mobile */
+    display: none;
 }
 
-/* NAVIGATION MENU */
-.navigation-menu {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center; /* Ensures the menu is centered */
+/*  LOGO */
+.logo img { /* Logo size */
+    max-height: 50px;
 }
 
-.navigation-menu ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 20px;
+/*  NAVIGATION MENU */
+.navigation-menu { /* Centered menu links */
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
 }
 
-.navigation-menu a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  padding: 10px 15px;
-  display: inline-block;
+.navigation-menu ul { /* Styles menu list */
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
-/* BOOK NOW BUTTON */
-.book-button {
-  background: #ff6600;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 4px;
-  transition: transform 0.3s;
-  margin-left: auto; /* Pushes button to the right */
+.navigation-menu a { /* Styles menu links */
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px 15px;
 }
 
-.book-button:hover {
-  background: #e55a00;
-  transform: scale(1.05);
+/*  BOOK NOW BUTTON */
+.header-book-button { /* Styles book now button */
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.3s;
+    margin-left: auto;
+    margin-right: 28px;
 }
 
+.header-book-button:hover { /* Button hover effect */
+    transform: scale(1.05);
+}
 
 /* FULL SCREEN SLIDER */
-.full-screen-slider {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 70px); /* Ensure it does not exceed screen */
-  margin-top: 72px;
-  overflow: hidden;
+.full-screen-slider { /* Makes slider fill the screen */
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+    overflow: hidden;
 }
 
-/* SLIDES */
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+/*  SLIDE */
+.slide { /* Ensures only one slide is visible */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    top: 0;
+    left: 0;
 }
 
-.slide.active {
-  opacity: 1;
+.slide.active { /* Displays active slide */
+    opacity: 1;
+    z-index: 1;
 }
 
-/* OVERLAY */
-.overlay {
-  position: absolute;
-  bottom: 10%;
-  left: 5%;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-  max-width: 50%;
+/*  OVERLAY */
+.overlay { /* Styles text overlay on slides */
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    max-width: 50%;
 }
 
-.overlay h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+/*  SLIDER BOOK NOW BUTTON */
+.slider-book-button { /* Button inside slider */
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.3s;
+    margin-top: 10px;
 }
 
-/* SLIDER CONTROLS (ARROWS) */
-.slider-controls {
+.slider-book-button:hover { /* Hover effect */
+    transform: scale(1.05);
+}
+
+/*  SLIDER CONTROLS (ARROWS) */
+.slider-controls { /* Positions arrows at center left/right */
   position: absolute;
   top: 50%;
   width: 100%;
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
-  z-index: 1000;
-  padding: 0 20px;
+  z-index: 1001;
+  padding: 0 15px;
 }
 
-/* ARROW BUTTONS */
-.slider-controls button {
+/*  LEFT ARROW */
+#prev {
+  left: 15px;
+}
+
+/*  RIGHT ARROW */
+#next {
+  right: 45px;
+}
+
+/*  ARROW BUTTON STYLE */
+.slider-controls button { /* Styles arrows */
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  padding: 15px 20px;
+  padding: 15px;
+  border-radius: 50%;
   cursor: pointer;
-  border-radius: 50px;
   font-size: 20px;
-  transition: 0.3s;
+  transition: background 0.3s ease;
   position: absolute;
+  z-index: 1002;
 }
 
-/* LEFT ARROW */
-#prev {
-  left: 20px;
+.slider-controls button:hover { /* Arrow hover effect */
+  background: rgba(0, 0, 0, 0.8);
 }
 
-/* RIGHT ARROW */
-#next {
-  right: 20px;
-}
-
-/* PAGINATION DOTS */
-.pagination-dots {
+/*  PAGINATION DOTS */
+.pagination-dots { /* Centers pagination dots */
   position: absolute;
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   gap: 8px;
-  z-index: 1000;
+  z-index: 10;
 }
 
 /* Each Dot */
-.pagination-dots div {
+.pagination-dots div { /* Default dot style */
   width: 12px;
   height: 12px;
   background: rgba(255, 119, 0, 0.5);
@@ -177,96 +187,86 @@ body {
 }
 
 /* Active Dot */
-.pagination-dots .active {
+.pagination-dots .active { /* Highlights current slide dot */
   background: white;
   width: 14px;
   height: 14px;
 }
 
-
-
-/* HIDE HAMBURGER MENU ON DESKTOP */
-.menu-toggle {
-  display: none; /* Hide on larger screens */
-}
-
-/* MOBILE RESPONSIVENESS */
+/* 📱 MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-  /* Ensure header is visible */
-  .header {
-    display: flex !important;
-  }
+    .header { /* Adjust padding */
+        padding: 10px 15px;
+    }
 
-  /* HIDE NORMAL NAVIGATION MENU */
-  .navigation-menu {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: white;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px 0;
-    z-index: 999;
-  }
+    /*  MOBILE MENU BUTTON */
+    .menu-toggle { /* Show menu button */
+        display: block !important;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-right: 10px;
+        z-index: 1100;
+    }
 
-  .navigation-menu ul {
-    flex-direction: column;
-    gap: 15px;
-  }
+    /*  MOBILE LOGO */
+    .logo img { /* Adjust logo size */
+        max-height: 40px;
+    }
 
-  /* SHOW HAMBURGER MENU ONLY ON MOBILE */
-  .menu-toggle {
-    display: block; /* Now it only appears on mobile */
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
+    /*  HIDE NAVIGATION MENU */
+    .navigation-menu { /* Initially hidden */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 10px;
+        z-index: 999;
+    }
 
-  /* Show menu when toggled */
-  .navigation-menu.active {
-    display: flex;
-  }
+    /*  SHOW MENU WHEN TOGGLED */
+    .navigation-menu.active {
+        display: flex;
+    }
+
+    /* FULL SCREEN SLIDER */
+    .full-screen-slider {
+        height: calc(100vh - 60px);
+    }
+
+    .overlay {
+        max-width: 80%;
+    }
+
+    .overlay h1 {
+        font-size: 1.8rem;
+    }
+
+    .slider-book-button {
+        font-size: 0.9rem;
+    }
+
+    /*  MOBILE ARROW SIZE */
+    .slider-controls button {
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    /*  LEFT & RIGHT ARROW POSITION */
+    #prev {
+        left: 5px;
+    }
+
+    #next {
+        right: 35px;
+    }
+
+    /* FIX PAGINATION DOTS */
+    .pagination-dots {
+        bottom: 8px;
+    }
 }
-
-
-  /* FIX LOGO POSITION */
-  .logo {
-    justify-content: center;
-  }
-
-  /* FIX "BOOK NOW" BUTTON */
-  .book-button {
-    margin-left: auto; /* Ensures it stays on the right */
-  }
-
-  /* SLIDER FULL SCREEN FIX */
-  .full-screen-slider {
-    height: calc(100vh - 70px); /* Ensures it fits the screen */
-  }
-
-  .overlay {
-    max-width: 80%;
-  }
-
-  .overlay h1 {
-    font-size: 1.5rem;
-  }
-
-  .book-button {
-    font-size: 0.8rem;
-  }
-
-  /* MAKE ARROWS SMALLER */
-  .slider-controls button {
-    padding: 10px 15px;
-  }
-
-  /* MOVE PAGINATION DOTS UP */
-  .pagination-dots {
-    bottom: 8px;
-  }
-
-
