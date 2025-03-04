@@ -21,6 +21,8 @@ This is a **fully responsive image slider** for a travel agency website. It disp
 ## 🔧 Setup Instructions  
 1. **Clone the repository**  
    ```sh
-   git clone https://github.com/your-username/image-slider.git
+   git clone https://github.com/goushithm22/image-slider.git
    cd image-slider
 
+
+FOR LIVE DEMONSTATION : https://goushithm22.github.io/image-slider/
