@@ -10,7 +10,7 @@ body {
   overflow-x: hidden;
 }
 
-/* HEADER */
+/* HEADER FIX */
 .header {
   position: fixed;
   top: 0;
@@ -20,7 +20,7 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Keep menu and button in place */
+  justify-content: space-between; /* Ensures everything is evenly spaced */
   padding: 10px 20px;
   z-index: 1000;
   height: 70px;
@@ -41,7 +41,7 @@ body {
 .navigation-menu {
   flex-grow: 1;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Ensures the menu is centered */
 }
 
 .navigation-menu ul {
@@ -69,7 +69,7 @@ body {
   font-size: 16px;
   border-radius: 4px;
   transition: transform 0.3s;
-  margin-left: auto; /* Push to right */
+  margin-left: auto; /* Pushes button to the right */
 }
 
 .book-button:hover {
@@ -77,11 +77,12 @@ body {
   transform: scale(1.05);
 }
 
+
 /* FULL SCREEN SLIDER */
 .full-screen-slider {
   position: relative;
   width: 100%;
-  height: 90.5vh;
+  height: calc(100vh - 70px); /* Ensure it does not exceed screen */
   margin-top: 72px;
   overflow: hidden;
 }
@@ -182,20 +183,11 @@ body {
   height: 14px;
 }
 
-/* RESPONSIVE FIXES FOR TABLET */
-@media (max-width: 1024px) {
-  .full-screen-slider {
-    height: 75vh;
-  }
-  
-  .overlay h1 {
-    font-size: 2rem;
-  }
-  
-  .book-button {
-    font-size: 0.9rem;
-    padding: 6px 12px;
-  }
+
+
+/* HIDE HAMBURGER MENU ON DESKTOP */
+.menu-toggle {
+  display: none; /* Hide on larger screens */
 }
 
 /* MOBILE RESPONSIVENESS */
@@ -224,9 +216,9 @@ body {
     gap: 15px;
   }
 
-  /* SHOW HAMBURGER MENU */
+  /* SHOW HAMBURGER MENU ONLY ON MOBILE */
   .menu-toggle {
-    display: block;
+    display: block; /* Now it only appears on mobile */
     font-size: 24px;
     background: none;
     border: none;
@@ -237,10 +229,22 @@ body {
   .navigation-menu.active {
     display: flex;
   }
+}
+
+
+  /* FIX LOGO POSITION */
+  .logo {
+    justify-content: center;
+  }
+
+  /* FIX "BOOK NOW" BUTTON */
+  .book-button {
+    margin-left: auto; /* Ensures it stays on the right */
+  }
 
   /* SLIDER FULL SCREEN FIX */
   .full-screen-slider {
-    height: 100vh; /* Ensure full screen */
+    height: calc(100vh - 70px); /* Ensures it fits the screen */
   }
 
   .overlay {
@@ -264,4 +268,5 @@ body {
   .pagination-dots {
     bottom: 8px;
   }
-}
+
+
